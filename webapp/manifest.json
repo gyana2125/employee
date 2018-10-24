@@ -1,0 +1,201 @@
+{
+	"_version": "1.8.0",
+	"sap.app": {
+		"id": "emp.employeelookup",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"sourceTemplate": {
+			"id": "ui5template.basicSAPUI5ApplicationProject",
+			"version": "1.40.12"
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": [
+			"sap_hcb",
+			"sap_belize"
+		]
+	},
+	"sap.ui5": {
+		"rootView": {
+			"viewName": "emp.employeelookup.view.app",
+			"type": "XML"
+		},
+		"dependencies": {
+			"minUI5Version": "1.30.0",
+			"libs": {
+				"sap.ui.layout": {},
+				"sap.ui.core": {},
+				"sap.m": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "emp.employeelookup.i18n.i18n"
+				}
+			},
+			"emp": {
+				"type": "sap.ui.model.json.JSONModel",
+				"uri": "employee.json"
+			}
+		},
+		"resources": {
+			"css": [
+				{
+					"uri": "css/style.css"
+				}
+			]
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"async": true,
+				"viewPath": "emp.employeelookup.view",
+				"controlAggregation": "pages",
+				"controlId": "idAppControl",
+				"clearControlAggregation": false,
+				  "bypassed": {
+               "target": "notFound"
+            }
+			},
+			"routes": [
+				{
+					"name": "home",
+					"pattern": "",
+					"titleTarget": "",
+					"greedy": false,
+					"target": [
+						"home"
+					]
+				},
+				{
+					"name": "EmpList",
+					"pattern": "EmpList",
+					"target": [
+						"EmpList"
+					]
+				},
+				{
+					"pattern": "details/{UserId}",
+					"name": "details",
+					"target": [
+						"details"
+					]
+				},
+				{
+					"name": "overView",
+					"pattern": "overView",
+					"target": [
+						"overviewTop",
+						"overviewContent"
+					]
+				}
+			],
+			"targets": {
+				"home": {
+					"viewType": "XML",
+					"viewName": "home",
+					"routerClass": "sap.m.routing.Router",
+					"async": true,
+					"viewPath": "emp.employeelookup.view",
+					"controlAggregation": "pages",
+					"controlId": "idAppControl",
+					"clearControlAggregation": false,
+					"bypassed": {
+						"target": "notFound"
+					}
+				},
+				"EmpList": {
+					"viewType": "XML",
+					"viewName": "EmpList",
+					"routerClass": "sap.m.routing.Router",
+					"async": true,
+					"viewPath": "emp.employeelookup.view",
+					"controlAggregation": "pages",
+					"controlId": "idAppControl",
+					"clearControlAggregation": false,
+					"transition": "slide",
+					"bypassed": {
+						"target": "notFound"
+					}
+				},
+				"details": {
+					"viewType": "XML",
+					"viewName": "details",
+					"routerClass": "sap.m.routing.Router",
+					"async": true,
+					"viewPath": "emp.employeelookup.view",
+					"controlAggregation": "pages",
+					"controlId": "idAppControl",
+					"clearControlAggregation": false,
+					"bypassed": {
+						"target": "notFound"
+					}
+				},
+				"overView": {
+					"viewType": "XML",
+					"viewName": "overView",
+					"routerClass": "sap.m.routing.Router",
+					"async": true,
+					"viewPath": "emp.employeelookup.view",
+					"controlAggregation": "pages",
+					"controlId": "idAppControl",
+					"clearControlAggregation": false,
+					"transition": "flip"
+				},
+				"overviewTop": {
+					"viewType": "XML",
+					"viewName": "overviewTop",
+					"viewPath": "emp.employeelookup.view",
+					"controlAggregation": "content",
+					"controlId": "EmployeeOverviewParent",
+					"clearControlAggregation": false,
+					"parent": "overView",
+					"routerClass": "sap.m.routing.Router",
+					"async": true
+				},
+				"overviewContent": {
+					"viewType": "XML",
+					"viewName": "overviewContent",
+					"parent": "overView",
+					"controlAggregation": "content",
+					"viewPath": "emp.employeelookup.view",
+					"transition": "flip",
+					"controlId": "EmployeeOverviewParent",
+					"routerClass": "sap.m.routing.Router",
+					"async": true,
+					"clearControlAggregation": false
+				},
+            "notFound": {
+               "viewName": "NotFound",
+               "transition": "show"
+            }
+			}
+		}
+	}
+}

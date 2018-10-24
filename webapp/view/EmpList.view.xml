@@ -1,0 +1,17 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" controllerName="emp.employeelookup.controller.EmpList">
+	<App>
+		<pages>
+			<Page title="list of emp"
+				showNavButton="true"
+		navButtonPress="onNavBack">
+				<content>
+					<List items="{emp>/employee}">
+						<items>
+							<StandardListItem title="{emp>firstName} {emp&gt;lastName}" type="Navigation" press="detail"/>
+						</items>
+					</List>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

@@ -1,0 +1,4 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="emp.employeelookup.controller.overviewTop"
+	xmlns:html="http://www.w3.org/1999/xhtml" class="sapUiMediumMarginBottom">
+	<Title text="Employee overview top" level="H1"></Title>
+</mvc:View>

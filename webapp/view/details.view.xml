@@ -1,0 +1,23 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" controllerName="emp.employeelookup.controller.details">
+	<App>
+		<pages>
+			<Page title="list of emp" showNavButton="true" navButtonPress="onNavBack" id="page">
+				<content>
+					<f:SimpleForm id="SimpleFormChange354" editable="true" layout="ResponsiveGridLayout" title="Details" labelSpanXL="3" labelSpanL="3"
+						labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1"
+						columnsL="1" columnsM="1" singleContainerFullSize="false">
+						<f:content>
+							<Label text="First Name"/>
+							<Text text="{firstName} " id="inp"/>
+							<Label text="Last Name"/>
+							<Text text="{lastName} " id="inp2"/>
+							<Label text="region"/>
+							<Text text="{region} " />
+						</f:content>
+					</f:SimpleForm>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
