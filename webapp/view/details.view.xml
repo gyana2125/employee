@@ -8,7 +8,7 @@
 						labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1"
 						columnsL="1" columnsM="1" singleContainerFullSize="false">
 						<f:content>
-							<Label text="First Name"/>
+							<Label text="Name Empolyee"/>
 							<Text text="{firstName} " id="inp"/>
 							<Label text="Last Name"/>
 							<Text text="{lastName} " id="inp2"/>
